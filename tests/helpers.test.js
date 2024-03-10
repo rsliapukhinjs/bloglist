@@ -87,11 +87,18 @@ describe("blog with most likes", () => {
   });
 });
 
-describe("most blogs by author", () => {
+describe("most anything by author", () => {
   test("get author with most blogs", () => {
-    assert(listHelper.mostBlogs(blogs), {
+    assert.deepStrictEqual(listHelper.mostBlogs(blogs), {
       author: "Robert C. Martin",
       blogs: 3,
+    });
+  });
+
+  test("get author with most total likes", () => {
+    assert.deepStrictEqual(listHelper.mostLikes(blogs), {
+      author: "Edsger W. Dijkstra",
+      likes: 17,
     });
   });
 });
