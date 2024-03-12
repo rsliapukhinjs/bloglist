@@ -10,6 +10,7 @@ app.use(cors());
 const middleware = require("./utils/middleware");
 app.use(middleware.errorHandler);
 
+require("express-async-errors");
 const blogsRouter = require("./controllers/blogs");
 app.use("/api/blogs", blogsRouter);
 
